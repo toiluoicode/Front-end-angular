@@ -1,0 +1,12 @@
+.form-check-label{
+    padding-left: 10px;
+    font-size: 120%;
+}
+.form-check-input{
+    height: 26px;
+    width: 26px;
+}
+.google, .normal{
+    width: 100%;
+    border-radius: 20px;
+}
