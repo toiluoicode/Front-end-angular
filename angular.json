@@ -27,10 +27,17 @@
             "styles": [
              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+             
             ],
             "scripts": [
               "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/vendor-all.min.js",
+              "src/assets/js/feather.min.js",
+              "src/assets/js/pcoded.min.js",
+              "src/assets/js/apexcharts.min.js",
+              "src/assets/js/dashboard-sale.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
