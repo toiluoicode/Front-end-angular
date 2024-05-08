@@ -1,6 +1,5 @@
 <app-header></app-header>
 <div class="pc-container">
-    <div class="pcoded-content">
         <h2>Title</h2>
         <div class="flex-container">
             <div class="item-left">
@@ -9,7 +8,24 @@
                 </div>
                 <div class="format-search item col-md-10">
                     <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . .">
-                    <i class="material-icons-two-tone">search</i>    
+                    <i class="icon material-icons-two-tone">search</i>  
+
+                    <!-- nếu lấy danh sách từ database-->
+
+                    <!-- <div *ngFor="let template of reportTemplates; let i = index">
+                        <a class="pc-link" (click)="toggleSubMenu(i)">
+                          <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
+                          <span class="pc-micon"></span>
+                          <span class="pc-mtext">{{ template.name }}</span>
+                        </a>
+                        <ul class="pc-submenu" [ngClass]="{'pc-submenu-visible': submenuVisible[i]}">
+                          <li class="pc-item" *ngFor="let item of template.items">
+                            <a class="pc-link">{{ item.name }}</a>
+                          </li>
+                        </ul>
+                      </div> -->
+
+
                     <br>
                         <a class="pc-link" (click)="toggleSubMenu1()"><span class="pc-arrow"><i data-feather="chevron-right"></i></span><span class="pc-micon"></span><span class="pc-mtext">Mẫu báo cáo</span></a>
                         <ul class="pc-submenu" [ngClass]="{'pc-submenu-visible': submenuVisible1}">
@@ -73,7 +89,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
         
         

@@ -83,7 +83,13 @@ top: 5px;
   .pc-submenu-visible {
     display: block;
   }
-  .format-right{
-
+  .icon:hover{
+    background-color: red;
   }
+ .pc-item:hover{
+    color: rgb(223, 40, 27);
+ }
+ .pc-mtext:hover{
+    color: rgb(86, 208, 86);
+ }
 
