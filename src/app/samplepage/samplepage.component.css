@@ -1,0 +1,40 @@
+.flex-container{
+    display: flex;
+}
+
+.item-left {
+    flex: 3; /* 60% width */
+    width: 60%;
+    background-color: #fafbfc;
+}
+
+.item-right {
+    flex: 2; /* 40% width */
+    width: 40%;
+    background-color: #f4f1f1;
+}
+.col-md-15{
+    padding-left: 3%;
+    background-color: rgb(74, 135, 204);
+}
+.icon-arrow{
+    width:4%;
+    height:4%;
+    position: relative;
+    left: 2%;
+}
+.material-icons-two-tone{
+top: 5px;
+    position: relative;
+    left: -27px;
+}
+.form-control{
+    width: 90%;
+    display: inline;
+    margin-left: 13px;
+    position: relative;
+    top: 4px;
+}
+.format-search{
+    background-color: rgb(48, 177, 237);
+}
