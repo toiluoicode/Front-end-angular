@@ -3,13 +3,13 @@
 }
 
 .item-left {
-    flex: 3; /* 60% width */
+    /* 60% width */
     width: 60%;
     background-color: #fafbfc;
 }
 
 .item-right {
-    flex: 2; /* 40% width */
+    /* 40% width */
     width: 40%;
     background-color: #f4f1f1;
 }
@@ -38,3 +38,40 @@ top: 5px;
 .format-search{
     background-color: rgb(48, 177, 237);
 }
+/*right*/
+.title-right{
+    background-color: #f4f1f1;
+}
+.title-right h3{
+    font-size: 20px;
+}
+.title-right .form-group{
+    display: flex;
+    scale: 90%;
+    align-items: center;
+}
+.title-right .form-group .form2{
+    width:70%;
+    position: relative;
+    
+
+}
+.title-right .form-group label {
+    position: relative;
+    width: 20%;
+    
+}
+.title-right .form-group input {
+    width: 30px;
+    position: relative;
+    top: 10%;
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+}
+.button-group button {
+    margin: 0 1%;
+
+}
+
