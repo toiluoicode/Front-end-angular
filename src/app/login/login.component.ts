@@ -11,9 +11,9 @@ import { RouterLink } from '@angular/router';
 })
 export class LoginComponent {
   @Output() onSubmitLoginEvent = new EventEmitter();
-  login : string="";
-  password:string ="";
+  UserName : string="";
+  Password:string ="";
   onSubmitLogin():void{
-    this.onSubmitLoginEvent.emit({"login":this.login,"password":this.password});
+    this.onSubmitLoginEvent.emit({"UserName":this.UserName,"password":this.Password});
   }
 }
