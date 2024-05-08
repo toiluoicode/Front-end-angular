@@ -9,11 +9,19 @@
                 </div>
                 <div class="format-search item col-md-10">
                     <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . .">
-                    <i class="material-icons-two-tone">search</i>
-                            
+                    <i class="material-icons-two-tone">search</i>    
                     <br>
-                        <a class="pc-link"><span class="pc-arrow"><i data-feather="chevron-right"></i></span><span class="pc-micon"></span><span class="pc-mtext">Mẫu báo cáo</span></a>
-                        <ul class="pc-submenu">
+                        <a class="pc-link" (click)="toggleSubMenu1()"><span class="pc-arrow"><i data-feather="chevron-right"></i></span><span class="pc-micon"></span><span class="pc-mtext">Mẫu báo cáo</span></a>
+                        <ul class="pc-submenu" [ngClass]="{'pc-submenu-visible': submenuVisible1}">
+                            <li class="pc-item"><a class="pc-link"  >Danh mục 1 </a></li>
+                            <li class="pc-item"><a class="pc-link"  >Danh mục 2</a></li>
+                            <li class="pc-item"><a class="pc-link"  >Danh muc 3</a></li>
+                            <li class="pc-item"><a class="pc-link"  >Danh muc 4</a></li>
+                            <li class="pc-item"><a class="pc-link"  >Danh muc 5</a></li>
+                        </ul>
+                        <br>
+                        <a class="pc-link" (click)="toggleSubMenu2()"><span class="pc-arrow"><i data-feather="chevron-right"></i></span><span class="pc-micon"></span><span class="pc-mtext">Mẫu báo cáo</span></a>
+                        <ul class="pc-submenu" [ngClass]="{'pc-submenu-visible': submenuVisible2}">
                             <li class="pc-item"><a class="pc-link"  >Danh mục 1 </a></li>
                             <li class="pc-item"><a class="pc-link"  >Danh mục 2</a></li>
                             <li class="pc-item"><a class="pc-link"  >Danh muc 3</a></li>
@@ -26,6 +34,7 @@
                 <div class="title-right col-md-15">
                     <h3>Thông tin nhóm báo cáo</h3> 
                     <hr style="border-top: 3px; color: rgb(39, 36, 36);">
+                    <div class="format-right">
                     <form>
                         <div class="title form-group ">
                           <label for="exampleInputEmail1">Mã Nhóm</label>
@@ -57,6 +66,7 @@
                         </div>
                        
                       </form>
+                    </div>
                 </div>
                 <div >
                     
