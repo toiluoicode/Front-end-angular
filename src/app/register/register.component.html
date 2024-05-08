@@ -7,43 +7,36 @@
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center"> 
               <h3 class="mb-5 ">Register</h3>
-              <form [formGroup]="form">
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="UserName" id="typeName" class="form-control form-control-lg"  placeholder="Tài khoản" [(ngModel)]="UserName" [ngModelOptions]="{standalone: true}"/>
-                <!-- <label class="form-label" for="typePasswordX-2">Password</label> -->
-              </div>
+              <form  (ngSubmit)="OnClickRegister()" #RegisterForm="ngForm"  >
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="Name" id="typeName" class="form-control form-control-lg" name="username" [(ngModel)]="user.username" placeholder="Tài khoản"/>
+             
+                </div>
 
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" />
-                <!-- <label class="form-label" for="typeEmailX-2">Email</label> -->
-                <label class="text-danger" *ngIf="getError(form.get('email'))">
-                  {{
-                      getError(form.get('email'))
-                  }}
-                </label>
-              </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="Email" [(ngModel)]="user.Email" placeholder="Email"/>
+    
+                </div>
+    
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="password" [(ngModel)]="user.password"  placeholder="Mật khẩu"/>
+               
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="typePasswordX-3" class="form-control form-control-lg" name="checkpassword" [(ngModel)]="user.checkpassword" placeholder="Nhập lại mật khẩu"/>
   
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password" id="typePasswordX-2" class="form-control form-control-lg"  placeholder="Mật khẩu" [(ngModel)]="Password" [ngModelOptions]="{standalone: true}"/>
-                <!-- <label class="form-label" for="typePasswordX-2">Password</label> -->
-              </div>
+                </div>
+    
 
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password" id="typePasswordX-3" class="form-control form-control-lg"  placeholder="Nhập lại mật khẩu" [(ngModel)]="ConfirmPassword" [ngModelOptions]="{standalone: true}"/>
-                <!-- <label class="form-label" for="typePasswordX-2">Password</label> -->
-              </div>
-  
-
-              <button data-mdb-button-init data-mdb-ripple-init class="normal btn btn-primary btn-lg btn-block" type="submit">Đăng ký</button>
-  
+                <button data-mdb-button-init data-mdb-ripple-init class="normal btn btn-primary btn-lg btn-block" type="submit">Đăng ký</button>
+              </form>
               <!-- <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
                 type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> --> 
-                </form>
-              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </section>
   
 

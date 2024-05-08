@@ -1,47 +1,42 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { RegisterService } from '../service/register.service';
+import { FormsModule } from '@angular/forms';
+import { response } from 'express';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, FormsModule,ReactiveFormsModule,CommonModule],
+  imports: [RouterLink,FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-export class RegisterComponent implements OnInit {
-  form:FormGroup =new FormGroup({
-    email:new FormControl("",[Validators.required,this.customeEmailValidator])
-  })
-
-  getError(control:any) : string {
-      if(control.errors?.required && control.touched)
-        return 'This field is required!';
-      else if(control.errors?.emailError && control.touched)
-        return 'Please enter valid email address!';
-      else return '';
+export class RegisterComponent {
+  user = {
+    username:"",
+    password:"",
+    checkpassword: "",
+    Email:""
   }
+  constructor(private http: RegisterService, private Router : Router){
 
-  customeEmailValidator(control:AbstractControl) {
-      const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/;
-      const value = control.value;
-      if(!pattern.test(value) && control.touched) 
-        return {
-          emailError:true
+  }
+  OnClickRegister():void {
+    this.http.Register(this.user.username,this.user.password,this.user.Email).subscribe({
+      next : (response)=>{
+        if (response.message === "success")
+        {
+          console.log(response)
+          this.Router.navigate(['/login'])
         }
-      else return null;
+        else{
+          console.log(response)
+        }
+      }
+        
+    })
   }
-
-  @Output() onSubmitLoginEvent = new EventEmitter();
-  UserName : string="";
-  Email : string="";
-  Password:string ="";
-  ConfirmPassword: string="";
-  onSubmitLogin():void{
-    this.onSubmitLoginEvent.emit({"UserName":this.UserName,"email":this.Email,"Password":this.Password,"ConfirmPassword":this.ConfirmPassword});
-  }
-  ngOnInit(): void {
-  }
+  
+  
   
 }

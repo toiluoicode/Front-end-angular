@@ -10,17 +10,6 @@ import { LoginComponent } from "../login/login.component";
     imports: [LoginComponent]
 })
 export class ContentComponent {
-  constructor (private AxiosService: AxiosService){}
-onLogin(input: any): void {
-  this.AxiosService.request(
-    "POST",
-    "/login",
-    {
-      login: input.login,
-      password: input.password      
-    }
-  )
 
-}
 
 }
