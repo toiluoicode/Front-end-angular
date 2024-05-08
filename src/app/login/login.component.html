@@ -8,12 +8,12 @@
             <h3 class="mb-5">Đăng nhập</h3>
             <form (ngSubmit)="onSubmitLogin()" #loginFrom="ngForm">
             <div  class="form-outline mb-4">
-              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Tài khoản" [(ngModel)]="login" [ngModelOptions]="{standalone: true}" />
+              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Tài khoản" name="username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" />
               <!-- <label class="form-label" for="typeEmailX-2">Email</label> -->
             </div>
 
             <div  class="form-outline mb-4">
-              <input type="password" id="typePasswordX-2" class="form-control form-control-lg"  placeholder="Mật khẩu" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
+              <input type="password" id="typePasswordX-2" class="form-control form-control-lg"  placeholder="Mật khẩu" name="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
               <!-- <label class="form-label" for="typePasswordX-2">Password</label> -->
             </div>
           

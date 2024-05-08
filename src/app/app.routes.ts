@@ -7,9 +7,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SamplepageComponent } from './samplepage/samplepage.component';
 
 export const routes: Routes = [
-    {path:'',title:"Dashboard-page",component:DashboardComponent},
-    {path:'login',component:LoginComponent},
-    {path:'register',component: RegisterComponent},
-    {path:'content',component:ContentComponent},
-    {path:'samplepage', component:SamplepageComponent},
+    { path: '', redirectTo: '/login', pathMatch: 'full' },  // Điều hướng trang mặc định tới /login
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'dashboard', component: DashboardComponent},  // Bảo vệ trang Dashboard
+    { path: 'content', component: ContentComponent },  // Bảo vệ trang Content
+    { path: 'samplepage', component: SamplepageComponent }
 ];
