@@ -1,0 +1,39 @@
+.flex-box{
+    display: flex;
+}
+
+.flex-component-left{
+    width: 60%;
+
+}
+.flex-component-right{
+    
+    width: 37%;
+    margin-left: 3%;
+}
+.table-list-connection thead th{
+    border: 1px solid black;
+}
+table.table-list-connection thead tr th, table.table-list-connection tbody td{
+   text-align: center;
+} 
+table.table-list-connection thead tr input{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+} 
+
+.form-group{
+    display: flex;
+}
+.form-group label{
+    width: 30%;
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+    
+}
+.button-group button {
+    margin: 0 5px;
+}
