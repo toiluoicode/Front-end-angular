@@ -1,0 +1,16 @@
+
+.button-group{
+    justify-content: center;    
+}
+.button-group button {
+    margin: 0 5px;
+
+}
+.top-container{
+    display: flex;
+
+}
+.top-container button{
+    margin: 0 1px;
+    
+}
