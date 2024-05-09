@@ -1,3 +1,4 @@
+import bootstrap from '../../main.server';
 import { HeaderComponent } from './../header/header.component';
 import { Component } from '@angular/core';
 
