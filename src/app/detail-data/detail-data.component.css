@@ -1,0 +1,15 @@
+.flex-container{
+    display: flex;
+    border-radius: 2% ;
+}
+.flex-container > div{
+    margin: 0 2px;
+}
+.bottm-container{
+    border-radius: 1% ;
+    clip-path: circle(95% at center);
+    height: 450px;
+    padding: 6px;
+    box-shadow: 0 0 0 1px rgb(213, 212, 212);
+}
+    

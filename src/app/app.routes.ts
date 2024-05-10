@@ -8,6 +8,8 @@ import { SamplepageComponent } from './samplepage/samplepage.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { QueryComponent } from './query/query.component';
 import { DataListComponent } from './data-list/data-list.component';
+import { DetailDataComponent } from './detail-data/detail-data.component';
+import { ApiComponent } from './api/api.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/connection', pathMatch: 'full' },  // Điều hướng trang mặc định tới /login
@@ -18,5 +20,7 @@ export const routes: Routes = [
     { path: 'samplepage', component: SamplepageComponent },
     {path:'connection',component:ConnectionComponent},
     {path:'query',component:QueryComponent},
-    {path:'datalist',component:DataListComponent}
+    {path:'datalist',component:DataListComponent},
+    {path:'detaildata',component:DetailDataComponent},
+    {path:'api',component:ApiComponent}
 ];
