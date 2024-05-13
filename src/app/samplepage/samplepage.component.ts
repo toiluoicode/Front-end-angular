@@ -1,18 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './../header/header.component';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { ReportService } from '../service/report.service';
+import { GroupReport } from '../DTO/groupReports';
+import { FormsModule } from '@angular/forms';
+import { report } from '../DTO/report';
 
 @Component({
   selector: 'app-samplepage',
   standalone: true,
-  imports: [RouterLink,RouterOutlet,HeaderComponent,CommonModule],
+  imports: [RouterLink,RouterOutlet,HeaderComponent,CommonModule,FormsModule],
   templateUrl: './samplepage.component.html',
   styleUrl: './samplepage.component.css'
 })
-export class SamplepageComponent {
+export class SamplepageComponent implements OnInit {
   submenuVisible1: boolean = false;
   submenuVisible2: boolean = false;
+  manhom: string | undefined ;
+  ghichu: number | undefined;
+  tennhom: string | undefined;
+  password: string = '';
+  groupReport : GroupReport[] = [];
 
   toggleSubMenu1() {
     this.submenuVisible1 = !this.submenuVisible1;
@@ -20,24 +29,27 @@ export class SamplepageComponent {
   toggleSubMenu2() {
     this.submenuVisible2 = !this.submenuVisible2;
   }
-  // nếu lấy danh sách từ database
+  constructor(private report: ReportService ){}
+  ngOnInit(): void {
+     this.report.GetReportdataForm().subscribe(
+      res =>{
+        this.groupReport = res;
+      }
+     );
+     
+  }
 
-  // reportTemplates: any[]; // Mảng chứa danh sách các mẫu báo cáo
-  // submenuVisible: boolean[] = []; // Mảng chứa trạng thái hiển thị của mỗi submenu
+  public selectedReport?: report = {"maNhom":"","tenNhom":"","ghichu": 0}
+  SelectedItem (report : report):void{
 
-  // constructor() {
-  //   // Lấy danh sách mẫu báo cáo từ cơ sở dữ liệu
-  //   // Ví dụ: this.reportTemplates = ...;
-  //   // Sau đó khởi tạo mảng submenuVisible với các giá trị mặc định
-  //   this.reportTemplates.forEach(() => {
-  //     this.submenuVisible.push(false);
-  //   });
-  // }
-
-  // toggleSubMenu(index: number) {
-  //   this.submenuVisible[index] = !this.submenuVisible[index];
-  // }
-
-
+      this.selectedReport = report;
+     this.manhom = this.selectedReport.maNhom
+     this.tennhom = this.selectedReport.tenNhom
+    this.ghichu = this.selectedReport.ghichu
+      console.log(this.selectedReport)
+  }
+  sayhelo(): void{
+    console.log("helo")
+  }
 
 }
