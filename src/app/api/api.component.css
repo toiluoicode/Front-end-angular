@@ -1,0 +1,18 @@
+.button-group button {
+    margin: 0 5px;
+
+}
+.top-container button{
+    margin: 0 1px;
+    
+}   
+.table button{
+    margin: 0 5px;
+}
+.table-list-connection {
+    table-layout: fixed;
+}
+.table-list-connection th,
+    .table-list-connection td {
+     overflow: hidden; 
+}

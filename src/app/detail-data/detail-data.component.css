@@ -12,4 +12,9 @@
     padding: 6px;
     box-shadow: 0 0 0 1px rgb(213, 212, 212);
 }
+.flex-container button{
+    margin-top: 5px;
+    margin-right: 1%;
+    border-radius: 7px;
+}
     

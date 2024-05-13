@@ -1,13 +1,15 @@
 .flex-box{
     display: flex;
 }
-
+.col-md-15{
+    padding-left: 3%;
+    background-color: rgb(74, 135, 204);
+}
 .flex-component-left{
     width: 60%;
-
+    font-size: 20px;
 }
 .flex-component-right{
-    
     width: 37%;
     margin-left: 3%;
 }
@@ -23,8 +25,12 @@ table.table-list-connection thead tr input{
     table-layout: fixed;
 } 
 
-.form-group{
+.form-control{
+    width: 90%;
     display: flex;
+    margin-left: 13px;
+    position: relative;
+    top: 4px;
 }
 .form-group label{
     width: 30%;
@@ -37,3 +43,41 @@ table.table-list-connection thead tr input{
 .button-group button {
     margin: 0 5px;
 }
+/* right */
+.title-right{
+    background-color: #f4f1f1;
+}
+.title-right h3{
+    font-size: 20px;
+}
+.title-right .form-group{
+    display: flex;
+    scale: 90%;
+    align-items: center;
+}
+.title-right .form-group .form2{
+    width:70%;
+    position: relative;
+    
+
+}
+.title-right .form-group label {
+    position: relative;
+    width: 20%;
+    
+}
+.title-right .form-group input {
+    width: 30px;
+    position: relative;
+    top: 10%;
+}
+.button-group{
+    display: flex;
+    justify-content: center;
+}
+.button-group button {
+    margin: 0 1%;
+
+}
+  
+
