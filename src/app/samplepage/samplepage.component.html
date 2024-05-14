@@ -1,43 +1,42 @@
 <app-header></app-header>
 <div class="pc-container">
     <div class="pcoded-content">
-        <h2>Title</h2>
+        <h2>Quản Lý Nhóm Báo Cáo</h2>
         <div class="flex-container">
             <div class="item-left">
-                <div class="col-md-15">
-                   <h3>Quản lý nhóm báo cáo</h3>
+                <div class="col-md-15" style="height: 30px;">
+                   <h5>Quản lý nhóm báo cáo</h5>
                 </div>
                 <div class="format-search item col-md-10">
                     <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . .">
-                    <i class="material-icons-two-tone">search</i>
-                            
+                    <i class="icon material-icons-two-tone">search</i>  
                     <br>
-                        <a class="pc-link"><span class="pc-arrow"><i data-feather="chevron-right"></i></span><span class="pc-micon"></span><span class="pc-mtext">Mẫu báo cáo</span></a>
-                        <ul class="pc-submenu">
-                            <li class="pc-item"><a class="pc-link"  >Danh mục 1 </a></li>
-                            <li class="pc-item"><a class="pc-link"  >Danh mục 2</a></li>
-                            <li class="pc-item"><a class="pc-link"  >Danh muc 3</a></li>
-                            <li class="pc-item"><a class="pc-link"  >Danh muc 4</a></li>
-                            <li class="pc-item"><a class="pc-link"  >Danh muc 5</a></li>
-                        </ul>
+                        <div *ngFor="let item of groupReport">
+                          <a  class="pc-link" ><span class="pc-arrow"><i data-feather="chevron-right"></i></span><span class="pc-micon"></span><span class="pc-mtext" >{{item.groupReport}}</span></a>
+                          <ul  *ngFor="let form of item.reports " >
+                              <li (click)="SelectedItem(form)" class="pc-item"><a class="pc-link" > </a>{{form.tenNhom}}</li>
+                          </ul>
+                        </div>
+                        <br>
                 </div>
             </div>
             <div class="item-right">
                 <div class="title-right col-md-15">
                     <h3>Thông tin nhóm báo cáo</h3> 
                     <hr style="border-top: 3px; color: rgb(39, 36, 36);">
-                    <form>
+                    <div class="format-right">
+                    <form #Form1 = "ngForm" >
                         <div class="title form-group ">
                           <label for="exampleInputEmail1">Mã Nhóm</label>
-                          <input class="form2 form-control">
+                          <input type="text" class="form2 form-control" [(ngModel)]="manhom"  [ngModelOptions]="{standalone: true}"> 
                         </div>
                         <div class="title form-group">
                           <label >Tên Nhóm</label>
-                          <input  class="form2 form-control" >
+                          <input type="text"  class="form2 form-control"  [(ngModel)]="tennhom"  [ngModelOptions]="{standalone: true}">
                         </div>
                         <div class="title form-group">
                             <label >Ghi Chú</label>
-                            <input  class="form2 form-control" >
+                            <input type="number"  class="form2 form-control"  [(ngModel)]="ghichu"  [ngModelOptions]="{standalone: true}" >
                         </div>
                         <div class=" title form-group">
                             <label>Nhóm Cha</label>
@@ -57,6 +56,7 @@
                         </div>
                        
                       </form>
+                    </div>
                 </div>
                 <div >
                     

@@ -6,13 +6,21 @@ import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SamplepageComponent } from './samplepage/samplepage.component';
 import { ConnectionComponent } from './connection/connection.component';
+import { QueryComponent } from './query/query.component';
+import { DataListComponent } from './data-list/data-list.component';
+import { DetailDataComponent } from './detail-data/detail-data.component';
+import { ApiComponent } from './api/api.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/connection', pathMatch: 'full' },  // Điều hướng trang mặc định tới /login
+    { path: '', redirectTo: '/login', pathMatch: 'full' },  // Điều hướng trang mặc định tới /login
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'dashboard', component: DashboardComponent},  // Bảo vệ trang Dashboard
     { path: 'content', component: ContentComponent },  // Bảo vệ trang Content
-    { path: 'samplepage', component: SamplepageComponent },
-    {path:'connection',component:ConnectionComponent}
+    { path: 'report', component: SamplepageComponent },
+    {path:'connection',component:ConnectionComponent},
+    {path:'query',component:QueryComponent},
+    {path:'datalist',component:DataListComponent},
+    {path:'detaildata',component:DetailDataComponent},
+    {path:'api',component:ApiComponent},
 ];
